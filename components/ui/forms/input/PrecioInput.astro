@@ -1,0 +1,77 @@
+---
+
+
+const { label, id, name, alerta } = Astro.props;
+
+interface Props {
+  label: string;
+  name: string;
+  id: string;
+  alerta: string;
+}
+---
+
+<!-- <div style="position: relative;">
+  
+  <label for={id} class="sr-only">{label}</label>
+  <input
+    type="number"
+    name={name}
+    id={id}
+    class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+    placeholder={label}
+    step="1.00" 
+  />
+  <span style="position: absolute; left: 10px; top: 10px; padding-right: 5px;bg-neutral-50">$&nbsp;</span>
+</div> -->
+<!-- funciona -->
+ <div class="relative">
+  <label for={id} class="sr-only">{label}</label>
+  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+    <span class="text-neutral-500 dark:text-neutral-400">$</span>
+  </div>
+  <input
+    type="number"
+    name={name}
+    id={id}
+    class="block w-full pl-5 rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+    placeholder={label}
+    step="1.00"
+  />
+</div> 
+<!-- prueba -->
+<!-- <div class="relative inline-block">
+  <label for={id} class="sr-only">{label}</label>
+  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+    <span class="text-neutral-500 dark:text-neutral-400">$</span>
+  </div>
+  <input
+    type="number"
+    name={name}
+    id={id}
+    class="block w-full pl-10 rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+    placeholder={label}
+    step="1.00"
+  />  
+  <div class="absolute right-0 top-1/2 transform -translate-y-1/2 ml-2">
+    <div class="relative group">
+      <button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 6a9 9 0 100 18 9 9 0 000-18z" />
+        </svg>
+      </button>
+      <div class="absolute hidden group-hover:block right-0 mt-2 w-64 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 tooltip">
+        <p class="text-sm text-gray-700 dark:text-gray-300 z-100">
+          {alerta}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .tooltip {
+    z-index: 9999;
+  }
+  </style> 
+  -->

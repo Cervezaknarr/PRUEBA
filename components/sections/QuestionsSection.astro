@@ -1,0 +1,30 @@
+---
+import { questionsFrecuentes } from "@/data_files/constants";
+import AccordionItem from "../ui/blocks/AccordionItem.astro";
+
+const makeId = (base: any, index: any) => `${base}${index + 1}`;
+---
+
+<section class="mx-auto flex max-w-[85rem] flex-col gap-12 px-4 py-10 sm:px-6 lg:my-12 lg:px-8">
+  <div class="text-center">
+    <h1 class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">
+      Preguntas Frecuentes
+    </h1>
+  </div>
+  <div class="mx-auto flex max-w-2xl flex-col gap-8 lg:max-w-5xl">
+    <div class="md:col-span-3">
+      <div class="hs-accordion-group divide-y divide-neutral-200 dark:divide-neutral-700">
+        {
+          questionsFrecuentes.map((question, i) => {
+            // Generate ids dynamically for each FAQ accordion item.
+            let id = makeId("hs-basic-with-title-and-arrow-stretched-heading-", i);
+            let collapseId = makeId("hs-basic-with-title-and-arrow-stretched-collapse", i);
+
+            return <AccordionItem {...question} id={id} collapseId={collapseId} first={i === 0} />;
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<script is:inline src="/scripts/vendor/preline/accordion/index.js"></script>

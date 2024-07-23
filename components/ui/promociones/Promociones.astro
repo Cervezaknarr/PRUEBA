@@ -1,0 +1,66 @@
+---
+---
+<div class="flex flex-col justify-between gap-4 md:flex-row">
+  <div class="flex flex-1 flex-col rounded-lg bg-yellow-400 p-6 text-center text-white dark:bg-yellow-400">
+    <h2 class="mb-4 text-2xl">10% OFF - Pago contado</h2>
+    <div id="result10Off" class="my-4 text-4xl">$0</div>
+    <p class="text-lg font-semibold">(con 10% de descuento incluido)</p>
+    <hr class="my-4 border-gray-300 dark:border-gray-700" />
+    <div class="mt-4 flex-grow space-y-2 text-base">
+      <p class="flex items-center justify-between">
+        <span>Costo original del Servicio:</span>
+        <span id="costoOriginal" class="font-medium">$0</span>
+      </p>
+      <p class="flex items-center justify-between">
+        <span>Descuento 10%:</span>
+        <span id="descuentoValor" class="font-medium">$0</span>
+      </p>
+      <p class="flex items-center justify-between">
+        <span>Total costo por servicio:</span>
+        <span id="totalCosto" class="font-medium">$0</span>
+      </p>
+    </div>
+    <p class="mt-2 text-sm">Promoción válida hasta el DD/MM/AAAA</p>
+  </div>
+  <div class="flex flex-1 flex-col rounded-lg bg-yellow-400 p-6 text-center text-white dark:bg-yellow-400">
+    <h2 class="mb-4 text-2xl">25% Anticipo + 3 cuotas sin interés</h2>
+    <div id="anticipo25" class="my-4 text-4xl">$0</div>
+    <p class="text-lg font-semibold">Anticipo</p>
+    <div id="cuotas25" class="my-4 text-4xl">$0</div>
+    <p class="text-lg font-semibold">3 cuotas de $<span id="cuotaValor25">0</span></p>
+    <hr class="my-4 border-gray-300 dark:border-gray-700" />
+    <div class="mt-4 flex-grow space-y-2 text-base">
+      <p class="flex items-center justify-between">
+        <span>Total costo por servicio:</span>
+        <span id="totalCosto25" class="font-medium">$0</span>
+      </p>
+    </div>
+    <p class="mt-2 text-sm">Promoción válida hasta el DD/MM/AAAA</p>
+  </div>
+  <div class="flex flex-1 flex-col rounded-lg bg-yellow-400 p-6 text-center text-white dark:bg-yellow-400">
+    <h2 class="mb-4 text-2xl">50% Anticipo + 6 cuotas sin interés</h2>
+    <div id="anticipo50" class="my-4 text-4xl">$0</div>
+    <p class="text-lg font-semibold">Anticipo</p>
+    <div id="cuotas50" class="my-4 text-4xl">$0</div>
+    <p class="text-lg font-semibold">6 cuotas de $<span id="cuotaValor50">0</span></p>
+    <hr class="my-4 border-gray-300 dark:border-gray-700" />
+    <div class="mt-4 flex-grow space-y-2 text-base">
+      <p class="flex items-center justify-between">
+        <span>Total costo por servicio:</span>
+        <span id="totalCosto50" class="font-medium">$0</span>
+      </p>
+    </div>
+    <p class="mt-2 text-sm">Promoción válida hasta el DD/MM/AAAA</p>
+  </div>
+
+  <script type="module">
+    import { handleSubmit } from "../src/types/calculator.ts";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById('calculatorForm');
+      if (form) {
+        form.addEventListener('submit', handleSubmit);
+      }
+    });
+  </script>
+</div>

@@ -1,0 +1,57 @@
+---
+// Import the necessary dependencies
+import { Image } from "astro:assets";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import LightModeBrandLogo from "@/components/LightModeBrandLogo.astro";
+import DarkModeBrandLogo from "@/components/DarkModeBrandLogo.astro";
+
+// Define props from Astro
+const { title, subTitle, primaryBtn, primaryBtnURL, secondaryBtn, secondaryBtnURL, withReview, avatars, starCount, rating, reviews, src, alt } =
+  Astro.props;
+
+// Define TypeScript interface for props
+interface Props {
+  title: string;
+  subTitle?: string;
+  primaryBtn?: string;
+  primaryBtnURL?: string;
+  secondaryBtn?: string;
+  secondaryBtnURL?: string;
+  withReview?: boolean;
+  avatars?: Array<string>;
+  starCount?: number;
+  rating?: string;
+  reviews?: string;
+  src?: any;
+  alt?: string;
+}
+---
+
+<section
+  class="mt-6 flex max-w-[85rem] flex-col items-center justify-center gap-4 px-4 py-14 sm:px-6 md:flex-row md:items-center md:gap-8 lg:px-8 2xl:max-w-full"
+>
+  <div>
+    <h1 class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight">
+      <Fragment set:html={title} />
+    </h1>
+    {subTitle && <p class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5">{subTitle}</p>}
+    <div class="mt-7 grid w-full gap-3 sm:inline-flex">
+      {primaryBtn && <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />}
+      {secondaryBtn && <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />}
+    </div>
+  </div>
+  <div class="flex w-full justify-start md:justify-end">
+    <div
+      class="hidden rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring hs-dark-mode-active:hidden dark:flex dark:ring-zinc-200 dark:focus:outline-none"
+    >
+      <!-- {src && alt && <Image src={src} alt={alt} class="h-[300px] w-[450px]" draggable={"false"} loading={"eager"} format={"png"} />} -->
+      <LightModeBrandLogo width="450" height="450" />
+    </div>
+    <div
+      class="flex rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring hs-dark-mode-active:hidden dark:hidden dark:ring-zinc-200 dark:focus:outline-none"
+    >
+      <DarkModeBrandLogo width="450" height="450" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+const { label, id, name } = Astro.props;
+interface Props {
+  label: string;
+  name: string;
+  id: string;
+}
+---
+<!-- 
+<div style="position: relative;">
+  
+  <label for={id} class="sr-only">{label}</label>
+
+  <select
+  name="tipoAlquiler"
+  id="tipoAlquiler"
+  class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+  >
+  <option value="" disabled selected>Seleccione tipo de Alquiler</option>
+  <option value="comercial">Comercial</option>
+  <option value="residencial">Residencial</option>
+  <option value="temporal">Temporal (6 a 8 meses)</option>
+</select>
+
+</div> -->
+
+<div style="position: relative;">
+  <label for={id} class="sr-only">{label}</label>
+  <select
+    name={name}
+    id={id}
+    class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+    onchange="handleTipoAlquilerChange()"
+  >
+    <option value="" disabled selected>Seleccione tipo de Alquiler</option>
+    <option value="comercial">Comercial</option>
+    <option value="residencial">Residencial</option>
+    <option value="temporal">Temporal (6 a 8 meses)</option>
+  </select>
+</div>

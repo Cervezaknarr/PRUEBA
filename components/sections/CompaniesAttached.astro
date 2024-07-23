@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  inmobiliarias: inmobiliariasType[];
+}
+
+interface inmobiliariasType {
+  title: string;
+}
+const { title, inmobiliarias } = Astro.props;
+---
+
+<!-- Main container that holds all content. Customized for different viewport sizes. -->
+<section
+  class="mx-auto mb-[12rem] flex w-[90%] flex-col items-center justify-center gap-12 border-4 border-yellow-500 bg-blue-20 px-4 py-10 dark:border-yellow-400 dark:bg-white/[.075] sm:px-6 md:flex-row md:flex-col lg:px-8 lg:py-14"
+>
+  <h2 class="text-center text-4xl text-neutral-600 dark:text-white">{title}</h2>
+  <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+    {
+      inmobiliarias.map((inmobiliaria) => (
+        <div class="relative flex h-[50px] w-[250px] items-center justify-center rounded-2xl bg-white">
+          <div class="absolute left-2 h-[34px] w-[34px] rounded-full border-4 border-yellow-500 bg-white dark:border-yellow-500" />
+          <h2 class="ml-[10px] h-fit w-[200px] overflow-hidden text-ellipsis text-nowrap rounded-lg bg-yellow-500 px-4 py-1 text-center text-sm text-neutral-600 dark:bg-yellow-500 dark:text-white">
+            {inmobiliaria.title}
+          </h2>
+        </div>
+      ))
+    }
+  </div>
+</section>

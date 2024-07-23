@@ -1,0 +1,62 @@
+---
+import { ArrepentimientoFormInfo } from "@/data_files/constants";
+import TextInput from "../ui/forms/input/TextInput.astro";
+import EmailBtn from "../ui/buttons/EmailBtn.astro";
+
+const { title, description, name, nacionality, idnumber, phonenumber, mail, serviceorproduct, sendtext } = ArrepentimientoFormInfo;
+// if (Astro.request.method === "POST") {
+//   try {
+//     const data = await Astro.request.formData();
+//     const name = data.get("name");
+//     const nacionality = data.get("nacionality");
+//     const idnumber = data.get("idnumber");
+//     const phonenumber = data.get("phonenumber");
+//     const mail = data.get("mail");
+//     const serviceorproduct = data.get("serviceorproduct");
+
+//     const message = `Buenas tardes, mi nombre es ${name} y estoy solicitando la revocación de ${serviceorproduct}, procedo a dejarles mi información: Nacionalidad: ${nacionality} - Numero de documento: ${idnumber} - Numero de teléfono: ${phonenumber}`;
+//     // TODO: Do not forget to do validation and error handling over received data from your contact form.
+
+//     // Sending email
+//     const msg = {
+//       to: "shiny.development@gmail.com", // Change to your recipient
+//       from: mail.toString(),
+//       replyTo: { email: mail.toString(), name: name.toString() },
+//       subject: `Pedido de Revocación de servicio/producto`,
+//       text: message,
+//     };
+//     await sendGrid
+//       .send(msg)
+//       .then(() => {
+//         console.log("Email sent");
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//       });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:my-12 lg:px-8">
+  <div class="mx-auto flex max-w-2xl flex-col gap-8 lg:max-w-5xl">
+    <h1 class="text-center text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">{title}</h1>
+    <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      {description}
+    </p>
+    <div>
+      <form method="POST" class="grid grid-cols-1 gap-10 md:grid-cols-2">
+        <TextInput id="name" label={name} name="name" />
+        <TextInput id="nacionality" label={nacionality} name="nacionality" />
+        <TextInput id="idnumber" label={idnumber} name="idnumber" />
+        <TextInput id="phonenumber" label={phonenumber} name="phonenumber" />
+        <TextInput id="mail" label={mail} name="mail" />
+        <TextInput id="serviceorproduct" label={serviceorproduct} name="serviceorproduct" />
+        <div class="col-span-2 flex justify-center">
+          <EmailBtn title={sendtext} />
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

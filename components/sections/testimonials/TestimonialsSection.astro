@@ -1,0 +1,33 @@
+---
+import StatsGrid from "../../ui/blocks/StatsGrid.astro";
+
+const { statistics } = Astro.props;
+
+interface Props {
+  title: string;
+  subTitle?: string;
+  statistics?: StatProps[];
+}
+
+// TypeScript type for stats.
+type StatProps = {
+  header: string;
+  description: string;
+};
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+  {
+    statistics && (
+      <div class="mt-10 lg:col-span-6 lg:col-end-13 lg:mt-0">
+        <div class="space-y-6 sm:space-y-8">
+          <ul class="grid grid-cols-2 divide-x-2 divide-y-2 divide-neutral-300 overflow-hidden dark:divide-neutral-700">
+            {statistics.map((stat) => (
+              <StatsGrid header={stat.header} description={stat.description} />
+            ))}
+          </ul>
+        </div>
+      </div>
+    )
+  }
+</section>

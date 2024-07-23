@@ -1,0 +1,44 @@
+---
+const { label, id, name } = Astro.props;
+interface Props {
+  label: string;
+  name: string;
+  id: string;
+}
+---
+<!-- <div style="position: relative;"> -->
+  
+    <!-- <label for={id} class="sr-only">{label}</label> ni idea que hace xD-->
+    <!-- <select
+    name="duracionAlquiler"
+    id="duration"
+    class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+    >
+  
+    <option value="" disabled selected>Duracion del Alquiler</option>
+    <option value="12">12 Meses</option>
+    <option value="18">18 Meses</option>
+    <option value="24">24 Meses</option>
+    <option value="36">36 Meses</option>
+    
+    
+  </select>
+
+  
+  </div>
+   -->
+   <div style="position: relative;">
+    <label for={id} class="sr-only">{label}</label>
+    <select
+      name={name}
+      id={id}
+      class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+    >
+      <option value="" disabled selected>Duracion del Alquiler</option>
+      <option value="12">12 Meses</option>
+      <option value="18">18 Meses</option>
+      <option value="24">24 Meses</option>
+      <option value="36">36 Meses</option>
+    </select>
+  </div>
+  
