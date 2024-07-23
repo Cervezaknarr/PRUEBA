@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Gotham Bold";
+  src:
+    url("/fonts/gotham/gotham-bold.otf") format("otf"),
+    url("/fonts/gotham/gotham-bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corporative";
+  src:
+    url("/fonts/corporative/corporative.otf") format("otf"),
+    url("/fonts/corporative/corporative.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Inmobiliarias Adheridas",
+  "inmobiliarias": [
+    { "title": "RE/MAX Argentina" },
+    { "title": "Toribio Achával" },
+    { "title": "Alberto Dacal Propiedades" },
+    { "title": "Bullrich Inmobiliaria" },
+    { "title": "Diaz Mayer & Brie Propiedades" },
+    { "title": "Tizado Propiedades" },
+    { "title": "Rudolph Inmobiliaria" },
+    { "title": "O'Keefe Inmobiliaria" },
+    { "title": "Duplex Inmobiliaria" },
+    { "title": "Predial Propiedades" }
+  ]
+}

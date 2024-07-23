@@ -1,0 +1,13 @@
+---
+// Import the necessary components
+import CalcuSection from "@/components/sections/CalcuSection.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = `Calculadora | ${SITE.title}`;
+---
+
+<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
+<MainLayout title={pageTitle}>
+  <CalcuSection />
+</MainLayout>

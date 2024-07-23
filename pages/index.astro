@@ -1,0 +1,98 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/FAQ.astro";
+import heroImage from "@images/imagen_llaves.png";
+import faqs from "@data/faqs.json";
+import companiesAttached from "@data/companiesAttached.json";
+import pricing from "@data/pricing.json";
+import calculatingcosts from "@images/calculatingcosts.png";
+import parejita from "@images/parejita.png";
+import alquilerseguro from "@images/alquilerseguro.png";
+import CompaniesAttached from "@/components/sections/CompaniesAttached.astro";
+import DollarSection from "@/components/sections/landing/DollarSection.tsx";
+---
+
+<MainLayout>
+  <div class="flex flex-col gap-[12rem]">
+    <HeroSection
+      title=`<span
+        class="dark:text-white text-neutral-700">Sinergia Valores S.A.</span>`
+      subTitle="Sistema de fianzas de alquiler 100 % digital con calificacion en 24 hs."
+      primaryBtn="Solicita tu fianza"
+      primaryBtnURL="/solicitud"
+      secondaryBtn="Calcula costos"
+      secondaryBtnURL="/contacto"
+      withReview={true}
+      rating=`<span class="font-bold">4.8</span> / 5`
+      starCount={4}
+      reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+      src={heroImage}
+      alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    />
+
+    <!-- <DollarSection client:load /> -->
+
+    <FeaturesNavs
+      title=`<span class="text-yellow-400">Accede a tus sueños!</span>`
+      tabs={[
+        {
+          heading: "Calcula Gratis",
+          content: "Descubre el costo de tu fianza sin compromiso. Calcula ahora mismo de manera rápida y gratuita.",
+          svg: "tools",
+          src: calculatingcosts,
+          alt: "Descubre el costo de tu fianza sin compromiso. Calcula ahora mismo de manera rápida y gratuita.",
+          first: true,
+        },
+        {
+          heading: "Solicita Tu Fianza",
+          content: "Obtén tu fianza de manera fácil y rápida. Completa el formulario y recibe tu fianza al instante.",
+          svg: "dashboard",
+          src: parejita,
+          alt: "Obtén tu fianza de manera fácil y rápida. Completa el formulario y recibe tu fianza al instante.",
+          second: true,
+        },
+        {
+          heading: "Alquila Seguro",
+          content: "Protege tu inversión con nuestra fianza de alquiler. Alquila seguro y sin preocupaciones.",
+          svg: "house",
+          src: alquilerseguro,
+          alt: "Protege tu inversión con nuestra fianza de alquiler. Alquila seguro y sin preocupaciones.",
+        },
+      ]}
+    />
+
+    <TestimonialsSection
+      title=""
+      subTitle=""
+      statistics={[
+        {
+          header: "CONFIANZA",
+          description:
+            "Equipo liderado por profesionales idoneos del area legal y financiero comprometidos con el servicio y respaldo durante todo el proceso.",
+        },
+        {
+          header: "SEGURIDAD",
+          description: "Protege tu inversion con nuestro sistema de fianzas para alquiler basado en el analisis por scoring.",
+        },
+        {
+          header: "SIMPLE, RAPIDO Y DIGITAL",
+          description: "La conformidad de la fianza para alquiler es gestionada en 24 hs mediante un procedimiento 100 % digital.",
+        },
+        {
+          header: "LIQUIDEZ INMEDIATA",
+          description: "Ante impagos respondemos con liquidez inmediata hasta la restitucion de la propiedad.",
+        },
+      ]}
+    />
+
+    <FAQ title="Preguntas Frecuentes" faqs={faqs} />
+
+    <CompaniesAttached title={companiesAttached.title} inmobiliarias={companiesAttached.inmobiliarias} />
+  </div>
+</MainLayout>
